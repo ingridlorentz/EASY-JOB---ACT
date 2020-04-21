@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 id="op" class="display-4">Colaboradores</h1>
+  <p id="hh">Colaboradores agregados: </p>
+  <div class="col-md-14">
+    <table class="table table-striped table-hover table-bordered table-sm bg-white">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>cargo</td>
+          <td>nombre</td>
+          <td>apellido</td>
+          <td>cedula</td>
+          <td>telefono</td>
+          <td>email</td>
+          <td>Operations</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for empleado in empleados %}
+        <tr>
+          <td>{{ empleado.0 }}</td>
+          <td>{{ empleado.1 }}</td>
+          <td>{{ empleado.2 }}</td>
+          <td>{{ empleado.3 }}</td>
+          <td>{{ empleado.4 }}</td>
+          <td>{{ empleado.5 }}</td>
+          <td>{{ empleado.6 }}</td>
+          <td>
+            <a href="/edit/{{empleado.0}}" class="btn btn-primary">edit</a>
+            <a href="/delete/{{empleado.0}}" class="btn btn-danger btn-delete">delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+
+{% endblock %}

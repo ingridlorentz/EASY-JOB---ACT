@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="jumbotron">
+  <div class="container">
+    <h1 id="op" class="display-4">Editar colaborador</h1>
+  <p id="hh">Valide los datos ingresados. </p>
+  <div class="row">
+    <div class="col-md">
+      <div class="col-md-4 offset-md-4">
+        <div class="card card-body">
+          <form action="/update/{{empleado.0}}" method="POST">
+            <div class="form-group">
+              <input type="text" name="cargo" value="{{empleado.1}}" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="nombre" value="{{empleado.2}}" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="apellido" value="{{empleado.3}}" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="cedula" value="{{empleado.4}}" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="telefono" value="{{empleado.5}}" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="email" value="{{empleado.6}}" class="form-control">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-block">
+                actualizar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+
+{% endblock %}

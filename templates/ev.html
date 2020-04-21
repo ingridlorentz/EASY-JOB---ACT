@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 id="op" class="display-4">Calificar al colaborador</h1>
+  <p id="hh">Ingrese los datos solicitados: </p>
+
+  <form action="{{url_for('eva_empleado')}}" method="POST">
+        <div class="form-group">
+          <input style="font-weight:bold; font-family: sans-serif; font-size: 15px;" type="text" name="id" placeholder="ID del colaborador">
+        </div>
+
+        <div style="font-weight:bold; font-family: sans-serif; font-size: 15px; color: white;" class="form-group">
+          <p>¿Se siente satisfecho con la atención? <br>
+            <br>
+            <input type="checkbox" name="atencion" value="Si"> ¡Sí!
+              <input type="checkbox" name="atencion" value="No"> No.
+            </p>
+            <div class="dropdown-divider"></div>
+        </div>
+
+        <div  style="font-weight:bold; font-family: sans-serif; font-size: 15px; color: white;" class="form-group">
+          <p>¿Como le pareció la actitud del colaborador? <br>
+            <br>
+            <input style="font-weight:bold; font-family: sans-serif; font-size: 15px; color:white;" type="checkbox" name="persona" value="Excelente"> Excelente
+            <input style="font-weight:bold; font-family: sans-serif; font-size: 15px; color:white;" type="checkbox" name="persona" value="Regular"> Regular
+            <input style="font-weight:bold; font-family: sans-serif; font-size: 15px; color:white;" type="checkbox" name="persona" value="Mala"> Mala
+          </p>
+          <div class="dropdown-divider"></div>
+        </div>
+
+        <div style="font-weight:bold; font-family: sans-serif; font-size: 15px; color:white;" class="form-group">
+          <p>¿Finalizó el trabajo en el tiempo estipulado? <br>
+            <br>
+            <input style="font-weight:bold; font-family: sans-serif; font-size: 15px; color:white;" type="checkbox" name="normas" value="si"> Sí
+            <input style="font-weight:bold; font-family: sans-serif; font-size: 15px; color: white;" type="checkbox" name="normas" value="no"> No
+          </p>
+          <div class="dropdown-divider"></div>
+        </div>
+
+      <p>
+        <input id="boton" type="submit" value="Enviar">
+        <input  id="boton" type="reset" value="Borrar">
+      </p>
+    </form>
+
+
+
+{% endblock %}

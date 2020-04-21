@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 id="op" class="display-4">Agregar colaborador</h1>
+  <p id="hh">Ingrese los datos solicitados: </p>
+
+    <div class="row">
+      <div class="col-sm">
+        {% with messages = get_flashed_messages()  %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="card card-body">
+          <form action="{{url_for('add_empleado')}}" method="POST">
+            <div class="form-group">
+              <input style="font-weight:bold; font-family: sans-serif; font-size: 15px;" type="text" class="form-control" name="cargo" placeholder="Cargo">
+            </div>
+
+            <div class="form-group">
+              <input style="font-weight:bold; font-family: sans-serif; font-size: 15px;" type="text" class="form-control" name="nombre" placeholder="Nombre">
+            </div>
+
+            <div class="form-group">
+              <input style="font-weight:bold; font-family: sans-serif; font-size: 15px;" type="text" class="form-control" name="apellido" placeholder="Apellido">
+            </div>
+
+            <div class="form-group">
+              <input style="font-weight:bold; font-family: sans-serif; font-size: 15px;" type="text" class="form-control" name="cedula" placeholder="Cédula">
+            </div>
+
+            <div class="form-group">
+              <input style="font-weight:bold; font-family: sans-serif; font-size: 15px;" type="text" class="form-control" name="telefono" placeholder="Teléfono">
+            </div>
+
+            <div class="form-group">
+              <input style="font-weight:bold; font-family: sans-serif; font-size: 15px;" type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+
+            <button class="btn btn-primary btn-block">
+              Guardar
+            </button>
+          </form>
+        </div>
+      </div>
+{% endblock %}

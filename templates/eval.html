@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 id="op" class="display-4">Evaluaciones del cliente</h1>
+  <div class="col-md-7">
+    <table class="table table-striped table-hover table-bordered table-sm bg-white">
+      <thead>
+        <tr>
+          <td>id</td>
+          <td>atencion</td>
+          <td>persona</td>
+          <td>normas</td>
+  
+        </tr>
+      </thead>
+      <tbody>
+        {% for empleado in evaluacion %}
+        <tr>
+          <td>{{ empleado.0 }}</td>
+          <td>{{ empleado.1 }}</td>
+          <td>{{ empleado.2 }}</td>
+          <td>{{ empleado.3 }}</td>
+          <td>
+            <a href="/deleteeva/{{empleado.0}}" class="btn btn-danger btn-delete">delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+
+{% endblock %}
